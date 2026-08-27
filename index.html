@@ -64,6 +64,114 @@
 <link href="https://just-theme.com/mrcoffee/css/zoomslider.css" rel="stylesheet" type="text/css" />
 <link href="https://just-theme.com/mrcoffee/css/style.css" rel="stylesheet" type="text/css" />
 
+
+<style>
+	/* ==========================================
+   CONTENEDOR DEL SLIDER
+   ========================================== */
+
+.top-prod-slider {
+    position: relative;
+    width: 100%;
+}
+
+.top-prod-slider-window {
+    width: 100%;
+    overflow: hidden;
+}
+
+
+/* ==========================================
+   TRACK
+   ========================================== */
+
+.top-prod-slider-track {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    transition: transform 0.5s ease-in-out;
+}
+
+
+/* ==========================================
+   CADA PRODUCTO
+   ========================================== */
+
+.top-prod-slide {
+    flex: 0 0 33.333333% !important;
+    max-width: 33.333333% !important;
+    width: 33.333333% !important;
+}
+
+
+/* ==========================================
+   BOTONES
+   ========================================== */
+
+.top-prod-prev,
+.top-prod-next {
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    z-index: 100;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    color: #fff;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    transition: all 0.3s ease;
+}
+
+.top-prod-prev {
+    left: 5px;
+}
+
+.top-prod-next {
+    right: 5px;
+}
+
+.top-prod-prev:hover,
+.top-prod-next:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+
+/* ==========================================
+   MÓVIL
+   ========================================== */
+
+@media (max-width: 767px) {
+
+    .top-prod-slide {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+}
+</style>
+
 </head>
 <body>
 	<!-- HEADER -->
@@ -85,37 +193,20 @@
 						<div class="row">
 						<div class="col-lg-2 col-md-12">
 							<ul class="top-social">
-								<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								<!--<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>-->
 								<li><a href="https://www.facebook.com/rivoli.cafe.xalapa/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+								<li><a href="https://www.instagram.com/rivoli.cafe/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
 							</ul>
 						</div>
 						<div class="col-lg-8 col-md-12">
 							<ul class="main-menu nav">
 								<li class="active"><a href="#">Inicio</a></li>
-								<li class="parent">
-									<a href="#">About</a>
-									<ul class="sub-menu">
-										<li><a href="#">About us</a></li>
-										<li class="parent">
-											<a href="#">Gallery</a>
-											<ul class="third-level">
-												<li><a href="#">Gallery 2 columns</a></li>
-												<li><a href="#">Gallery 3 columns</a></li>
-												<li><a href="#">Gallery 4 columns</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Maintance Mode</a></li>
-										<li><a href="#">Error Page</a></li>
-									</ul>
+								<li >
+									<a href="#">Nosotros</a>
+								
 								</li>
-								<li class="parent">
+								<li >
 									<a href="#">Productos</a>
-									<ul class="sub-menu">
-										<li><a href="#">Single item</a></li>
-										<li><a href="#">Cart</a></li>
-										<li><a href="#">Checkout</a></li>
-									</ul>
 								</li>
 								<li><a href="#">Donde Comprar</a></li>
 							
@@ -190,7 +281,7 @@
     <!-- MAIN SLIDER END -->
 
 	<!-- MAIN TOP PRODUCT -->
-    <section class="top-prod-wrap">
+    <!--<section class="top-prod-wrap">
 		<div class="top-prod-types">
 			<div class="container">
 				<div class="row no-gutter">
@@ -215,8 +306,94 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section>-->
 	<!-- MAIN TOP PRODUCT END -->
+	 <!-- MAIN TOP PRODUCT -->
+<!-- MAIN TOP PRODUCT -->
+<section class="top-prod-wrap">
+
+    <div class="top-prod-types">
+
+        <div class="container">
+
+            <div class="top-prod-slider">
+
+                <!-- BOTÓN ANTERIOR -->
+                <button type="button"
+                        class="top-prod-prev"
+                        aria-label="Producto anterior">
+                    &#10094;
+                </button>
+
+                <!-- VENTANA -->
+                <div class="top-prod-slider-window">
+
+                    <div class="row no-gutter top-prod-slider-track">
+
+                        <!-- PRODUCTO 1 -->
+                        <div class="col-md-4 top-prod-slide">
+                            <div class="item first">
+                                <img src="img/cafe1.png"
+                                     width="150"
+                                     height="150"
+                                     alt="Tostado Ligero">
+
+                                <div class="name dark">
+                                    <span>Tostado </span> Ligero
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- PRODUCTO 2 -->
+                        <div class="col-md-4 top-prod-slide">
+                            <div class="item second">
+                                <img src="img/cafe2.png"
+                                     width="150"
+                                     height="150"
+                                     alt="Gourmet Especialidad">
+
+                                <div class="name">
+                                    <span>Gourmet</span> Especialidad
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- PRODUCTO 3 -->
+                        <div class="col-md-4 top-prod-slide">
+                            <div class="item third">
+                                <img src="img/cafe3.jpg"
+                                     width="150"
+                                     height="150"
+                                     alt="Grano Selecto">
+
+                                <div class="name">
+                                    <span>Grano</span> Selecto
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- BOTÓN SIGUIENTE -->
+                <button type="button"
+                        class="top-prod-next"
+                        aria-label="Producto siguiente">
+                    &#10095;
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- MAIN TOP PRODUCT END -->
+<!-- MAIN TOP PRODUCT END -->
 	
 	<!-- MAIN ABOUT -->
 	<section class="about-us">
@@ -546,27 +723,78 @@
 						</div>
 					</div>
 				</div>
+				
 				<div class="col-md-6">
-					<div class="contact-right">
-						<h2>Enviar Mensaje</h2>
-						<form class="contact-form">
-							<div class="row">
-								<div class="col-md-12">
-									<textarea placeholder="Comentario *"></textarea>
-								</div>
-								<div class="col-md-6">
-									<input class="contact-input" type="text" placeholder="Nombre *">
-								</div>
-								<div class="col-md-6">
-									<input class="contact-input" type="email" placeholder="Email *">
-								</div>
-								<div class="col-md-12 text-center">
-									<button>Enviar</button>
-								</div>
-							</div>	
-						</form>
-					</div>
-				</div>
+    <div class="contact-right">
+        <h2>Enviar Mensaje</h2>
+
+        <form id="frmContacto" class="contact-form">
+
+            <div class="row">
+
+                <div class="col-md-12">
+                    <textarea
+                        id="descripcion"
+                        name="descripcion"
+                        placeholder="Comentario *"
+                        required></textarea>
+                </div>
+
+                <div class="col-md-6">
+                    <input
+                        id="nombre"
+                        class="contact-input"
+                        type="text"
+                        name="nombre"
+                        placeholder="Nombre *"
+                        required>
+                </div>
+
+                <div class="col-md-6">
+                    <input
+                        id="correo"
+                        class="contact-input"
+                        type="email"
+                        name="correo"
+                        placeholder="Email *"
+                        required>
+                </div>
+
+				<div class="col-md-6">
+                    <input
+                        id="telefono"
+                        class="contact-input"
+                        type="text"
+                        name="telefono"
+                        placeholder="Teléfono *"
+                        required>
+                </div>
+
+				<div class="col-md-6">
+                    <input
+                        id="servicio"
+                        class="contact-input"
+                        type="text"
+                        name="servicio"
+                        placeholder="Nombre *"
+                        required readonly value="RivoliWeb">
+                </div>
+
+                <div class="col-md-12 text-center">
+                    <button
+                        id="btnEnviar"
+                        type="submit">
+                        Enviar
+                    </button>
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
 			</div>
 		</div>
 	</div>
@@ -618,7 +846,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-2 col-sm-6">
-						<a href="#" class="footer-logo"><img src="img/logo.png" alt=""></a>
+						<a href="#" class="footer-logo"><img src="img/logo2.jpg" alt="" width="139"></a>
 					</div>
 					<div class="col-md-4 col-sm-6">
 						<div class="footer-about">
@@ -644,9 +872,9 @@
 						<div class="footer-social">
 							<div class="title">Siguenos</div>
 							<ul class="social">
-								<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								<!--<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>-->
 								<li><a href="https://www.facebook.com/rivoli.cafe.xalapa/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+								<li><a href="https://www.instagram.com/rivoli.cafe/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
 							</ul>	
 						</div>
 					</div>
@@ -657,11 +885,358 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 text-center">
-						<div class="copyrights"><a href="#">blapeer-themes</a> 2026 &copy; All Rights reserved </div>
+						<div class="copyrights"><a href="#">blapeer-themes</a> <span id="anioActual"></span> &copy; All Rights reserved </div>
 					</div>
 				</div>
 			</div>
 		</div>
+
+<script>
+    document.getElementById("anioActual").textContent = new Date().getFullYear();
+	
+</script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const track = document.querySelector(".top-prod-slider-track");
+    const prevButton = document.querySelector(".top-prod-prev");
+    const nextButton = document.querySelector(".top-prod-next");
+
+    let originalSlides = Array.from(
+        track.querySelectorAll(".top-prod-slide")
+    );
+
+    let totalSlides = originalSlides.length;
+
+    let currentIndex = 0;
+
+    let autoSlide;
+
+
+    /*
+     * ==========================================
+     * CREAR COPIAS
+     * ==========================================
+     */
+
+    function crearClones() {
+
+        /*
+         * Clonamos todos los productos
+         * después de los originales.
+         *
+         * 1 2 3 1 2 3
+         */
+
+        originalSlides.forEach(function (slide) {
+
+            const clone = slide.cloneNode(true);
+
+            clone.classList.add("top-prod-slide-clone");
+
+            track.appendChild(clone);
+
+        });
+
+    }
+
+
+    /*
+     * ==========================================
+     * CUÁNTOS PRODUCTOS SE VEN
+     * ==========================================
+     */
+
+    function getVisibleSlides() {
+
+        if (window.innerWidth <= 767) {
+            return 1;
+        }
+
+        return 3;
+    }
+
+
+    /*
+     * ==========================================
+     * MOVER SLIDER
+     * ==========================================
+     */
+
+    function moverSlider(animated = true) {
+
+        const visibleSlides = getVisibleSlides();
+
+        const slideWidth = 100 / visibleSlides;
+
+        if (!animated) {
+
+            track.style.transition = "none";
+
+        }
+        else {
+
+            track.style.transition =
+                "transform 0.5s ease-in-out";
+
+        }
+
+        track.style.transform =
+            "translateX(-" +
+            (currentIndex * slideWidth) +
+            "%)";
+    }
+
+
+    /*
+     * ==========================================
+     * SIGUIENTE
+     * ==========================================
+     */
+
+    function nextSlide() {
+
+        currentIndex++;
+
+        moverSlider(true);
+
+    }
+
+
+    /*
+     * ==========================================
+     * ANTERIOR
+     * ==========================================
+     */
+
+    function prevSlide() {
+
+        currentIndex--;
+
+        /*
+         * Si estamos en el inicio,
+         * saltamos temporalmente al segundo
+         * grupo de productos.
+         */
+
+        if (currentIndex < 0) {
+
+            currentIndex = totalSlides;
+
+            moverSlider(false);
+
+            /*
+             * Esperamos un instante y después
+             * hacemos el movimiento normal.
+             */
+
+            setTimeout(function () {
+
+                currentIndex--;
+
+                moverSlider(true);
+
+            }, 20);
+
+        }
+        else {
+
+            moverSlider(true);
+
+        }
+
+    }
+
+
+    /*
+     * ==========================================
+     * DETECTAR FIN DEL SLIDER
+     * ==========================================
+     */
+
+    track.addEventListener("transitionend", function () {
+
+        /*
+         * Cuando llegamos al segundo grupo:
+         *
+         * 1 2 3 | 1 2 3
+         *
+         * volvemos silenciosamente al primer grupo.
+         */
+
+        if (currentIndex >= totalSlides) {
+
+            currentIndex = 0;
+
+            moverSlider(false);
+
+        }
+
+    });
+
+
+    /*
+     * ==========================================
+     * BOTÓN SIGUIENTE
+     * ==========================================
+     */
+
+    nextButton.addEventListener("click", function () {
+
+        nextSlide();
+
+        reiniciarAutoSlide();
+
+    });
+
+
+    /*
+     * ==========================================
+     * BOTÓN ANTERIOR
+     * ==========================================
+     */
+
+    prevButton.addEventListener("click", function () {
+
+        prevSlide();
+
+        reiniciarAutoSlide();
+
+    });
+
+
+    /*
+     * ==========================================
+     * AUTOMÁTICO
+     * ==========================================
+     */
+
+    function iniciarAutoSlide() {
+
+        autoSlide = setInterval(function () {
+
+            nextSlide();
+
+        }, 4000);
+
+    }
+
+
+    /*
+     * ==========================================
+     * REINICIAR AUTOMÁTICO
+     * ==========================================
+     */
+
+    function reiniciarAutoSlide() {
+
+        clearInterval(autoSlide);
+
+        iniciarAutoSlide();
+
+    }
+
+
+    /*
+     * ==========================================
+     * RESPONSIVE
+     * ==========================================
+     */
+
+    window.addEventListener("resize", function () {
+
+        moverSlider(false);
+
+    });
+
+
+    /*
+     * ==========================================
+     * INICIAR
+     * ==========================================
+     */
+
+    crearClones();
+
+    moverSlider(false);
+
+    iniciarAutoSlide();
+
+});
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+
+emailjs.init({
+    publicKey: "Qan54O_stwMZjI4CF"
+});
+
+document.getElementById("frmContacto").addEventListener("submit", function(event) {
+
+    // EVITA QUE EL FORMULARIO RECARGUE LA PÁGINA
+    event.preventDefault();
+
+    const formulario = this;
+
+    // Enviar formulario mediante EmailJS
+    emailjs.sendForm(
+        "service_lypxtai", //
+    "template_cg08939",
+        formulario
+    )
+    .then(function(response) {
+
+        console.log("Correo enviado correctamente:", response);
+
+        alert("¡Mensaje enviado correctamente!");
+
+        // Limpiar formulario
+        formulario.reset();
+
+    })
+    .catch(function(error) {
+
+        console.error("Error al enviar:", error);
+
+        alert("No se pudo enviar el mensaje. Intenta nuevamente....  " + JSON.stringify(error));
+
+    });
+
+});
+
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Rivoli Coffee",
+    "url": "https://rivolicoffee.github.io/",
+    "telephone": "+52 2281010196",
+    "logo": "https://rivolicoffee.github.io/logo.png",
+    "image": "https://rivolicoffee.github.io/logo.png",
+
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Xalapa Enríquez Centro",
+        "addressLocality": "Xalapa",
+        "addressRegion": "Veracruz",
+        "addressCountry": "MX"
+    },
+
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "19.50751",
+        "longitude": "-96.86456"
+    }
+}
+</script>
+
 	</footer>
 	<!-- FOOTER END -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
